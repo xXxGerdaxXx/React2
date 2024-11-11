@@ -4,11 +4,11 @@ import vectorgreen from '../assets/images/Vectorgreen.svg';
 import '../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt, faCommentAlt, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-
+// Använde chatt för att konvertera min gamla HTML och JS
 const FAQSection = () => {
-  const [faqs, setFaqs] = useState([]); // State for storing the FAQ data
-  const [error, setError] = useState(null); // State for storing any error
-  const [openQuestion, setOpenQuestion] = useState(null); // State for handling open/close FAQ
+  const [faqs, setFaqs] = useState([]); 
+  const [error, setError] = useState(null); 
+  const [openQuestion, setOpenQuestion] = useState(null); 
 
   useEffect(() => {
     const fetchFAQs = async () => {
@@ -18,20 +18,20 @@ const FAQSection = () => {
           throw new Error('Failed to fetch FAQs');
         }
         const data = await res.json();
-        console.log('Fetched FAQs:', data); // Add this to log the response data
-        setFaqs(data); // Set the FAQ data in state
+        console.log('Fetched FAQs:', data); 
+        setFaqs(data); 
       } catch (error) {
         setError('Failed to load FAQs. Please try again later.');
-        console.error('Error fetching FAQs:', error); // Log any errors
+        console.error('Error fetching FAQs:', error); 
       }
     };
   
-    fetchFAQs(); // Call the API when the component mounts
-  }, []); // Empty dependency array ensures it runs only once
+    fetchFAQs(); 
+  }, []); 
   
 
   const toggleAnswer = (index) => {
-    setOpenQuestion(openQuestion === index ? null : index); // Toggle open/close FAQ
+    setOpenQuestion(openQuestion === index ? null : index); 
   };
 
   return (
@@ -68,7 +68,7 @@ const FAQSection = () => {
       {/* Handle error case */}
       {error ? <p>{error}</p> : null}
 
-      {/* Dynamically render the FAQ list */}
+  
       <div className="questions-list">
         {faqs.length > 0 ? (
           faqs.map((faq, index) => (

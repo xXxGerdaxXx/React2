@@ -1,11 +1,11 @@
 import React from 'react';
-import iphoneFeatures from '../assets/images/iphone-features.svg'; // Adjust the path
-import vector1 from '../assets/images/vector1.svg'; // Adjust the path
-import vector2 from '../assets/images/vector2.svg'; // Adjust the path
-import vector3 from '../assets/images/vector3.svg'; // Adjust the path
-import vector4 from '../assets/images/vector4.svg'; // Adjust the path
-import vector5 from '../assets/images/vector5.svg'; // Adjust the path
-import vector6 from '../assets/images/vector6.svg'; // Adjust the path
+import iphoneFeatures from '../assets/images/iphone-features.svg'; 
+import vector1 from '../assets/images/vector1.svg'; 
+import vector2 from '../assets/images/vector2.svg'; 
+import vector3 from '../assets/images/vector3.svg'; 
+import vector4 from '../assets/images/vector4.svg'; 
+import vector5 from '../assets/images/vector5.svg'; 
+import vector6 from '../assets/images/vector6.svg'; 
 
 const FeaturesSection = () => {
   return (

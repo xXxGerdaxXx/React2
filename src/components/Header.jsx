@@ -1,11 +1,10 @@
-// Header.jsx
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/logo.svg';
 import MobileMenuButton from './MobileMenuButton';
-import SignInButton from './SignInButton'; // Import the new SignInButton component
+import SignInButton from './SignInButton'; 
 import '../index.css';
 
-const Header = () => {
+const Header = ({ isContactPage }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,7 +33,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={`header ${isContactPage ? 'header-contact' : ''}`}>
       <div className="container">
         <a id="logo" href="/">
           <img src={logo} alt="Silicon Logotype" />
@@ -42,6 +41,7 @@ const Header = () => {
         </a>
 
         <nav id="main-menu" className={`navbar ${menuOpen ? 'open' : ''}`}>
+        <a className="nav-link" href="/">Home</a>
           <a className="nav-link" href="#">Features</a>
           <a className="nav-link" href="/contact">Contact</a>
         </nav>
@@ -61,7 +61,7 @@ const Header = () => {
 
         <MobileMenuButton onClick={toggleMenu} />
 
-        <SignInButton /> {/* Use the new SignInButton component */}
+        <SignInButton /> 
       </div>
     </header>
   );

@@ -16,7 +16,7 @@ import FAQSection from './components/Faq';
 import Subscribe from './components/Subscribe';
 import ContactButton from './components/ContactButton';
 import ContactBoxesTablet from './components/ContactBoxesTablet';
-import Header2 from './components/Header2';
+
 import Footer2 from './components/Footer2';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
               path="/" 
               element={
                 <>
-                <Header />
+                <Header isContactPage={false} /> 
                   <HeroSection />
                   <BrandsSection />
                   <FeaturesSection />
@@ -52,7 +52,7 @@ function App() {
               path="/contact" 
               element={
                 <>
-                  <Header2 />
+                  <Header isContactPage={true} /> 
                   <Breadcrumb />
                   <Contact />
                   <MapAndCenters />

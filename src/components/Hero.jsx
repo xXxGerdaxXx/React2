@@ -1,8 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  // Import FontAwesomeIcon
-import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';  // Import specific icons
-import nextBtnIcon from '../assets/images/next-btn.svg';  // Adjust the path as needed
-import iphonesImage from '../assets/images/iphones.svg';  // Adjust the path as needed
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';  
+import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';  
+import nextBtnIcon from '../assets/images/next-btn.svg';  
+import iphonesImage from '../assets/images/iphones.svg';  
 
 const HeroSection = () => {
   return (
@@ -38,7 +38,7 @@ const HeroSection = () => {
               <button className="discover-button">
                 <img
                   className="discover-icon"
-                  src={nextBtnIcon}  // Use imported image variable
+                  src={nextBtnIcon}  
                   alt="Next button icon leading to more information"
                 />
                 <span className="discover-text">Discover more</span>
@@ -49,7 +49,7 @@ const HeroSection = () => {
           <div className="hero-image">
             <img
               className="hero-image"
-              src={iphonesImage}  // Use imported image variable
+              src={iphonesImage}  
               alt="App Preview Image"
             />
           </div>

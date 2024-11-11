@@ -1,8 +1,6 @@
 import React from 'react';
 import '../index.css';
-import ContactForm from './ContactForm'; // Import the new ContactForm component
-
-// Import images from src folder
+import ContactForm from './ContactForm'; 
 import emailIcon from '../assets/images/email.svg';
 import careerIcon from '../assets/images/career.svg';
 import arrowIcon from '../assets/images/Vector.svg';
@@ -14,7 +12,7 @@ function Contact() {
         <div className="contact-details-index2">
           <h1>Contact us</h1>
 
-          {/* Contact Item 1: Email Us */}
+          
           <div className="contact-item-index2">
             <div className="contact-icon-index2">
               <img src={emailIcon} alt="Email Icon" />
@@ -26,7 +24,7 @@ function Contact() {
             </div>
           </div>
 
-          {/* Contact Item 2: Careers */}
+          
           <div className="contact-item-index2">
             <div className="contact-icon-index2">
               <img src={careerIcon} alt="Careers Icon" />
@@ -39,8 +37,8 @@ function Contact() {
           </div>
         </div>
 
-        {/* Contact Form Component */}
-        <ContactForm /> {/* Here’s where you render the new ContactForm component */}
+        
+        <ContactForm /> 
       </div>
     </section>
   );

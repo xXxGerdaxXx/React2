@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import iphone12Pro from '../assets/images/iPhone 12 Pro.svg';
 import iphone12ProMiddle from '../assets/images/iPhone 12 Pro-middle.svg';
 import iphone12ProThird from '../assets/images/iPhone 12 Pro-third.svg';
-
+//Använde chatt för att konvertera min gamla HTML till JSX
 const HowItWorksSection = () => {
   const images = [iphone12Pro, iphone12ProMiddle, iphone12ProThird];
   const [currentIndex, setCurrentIndex] = useState(0); // Manage the current image index
@@ -18,7 +18,7 @@ const HowItWorksSection = () => {
         image.style.transform = `translateX(-${currentIndex * 100}%)`;
       });
     } else {
-      // Desktop behavior: Scale the centered image
+      // Tablet and Desktop behavior: Scale the centered image
       imageRefs.current.forEach((image, index) => {
         if (index === currentIndex) {
           image.classList.add('center'); // Scale the current image
@@ -28,6 +28,8 @@ const HowItWorksSection = () => {
       });
     }
   };
+  
+  
 
   useEffect(() => {
     // Set up event listeners for next and prev buttons
@@ -91,6 +93,26 @@ const HowItWorksSection = () => {
             consectetur condimentum.
           </h3>
         </div>
+          {/* Descriptions */}
+          <div className="description-tablet">
+          <h2>Step 3. Transfers to people from your
+          contact list</h2>
+          <h3>
+          Proin volutpat mollis egestas. Nam luctus facilisis ultrices.
+          Pellentesque volutpat ligula est. Mattis fermentum, at nec
+          lacus.
+          </h3>
+          </div>
+          {/* Descriptions */}
+          <div className="description-mobile">
+          <h2>Transfers to people from
+          your contact list</h2>
+          <h3>
+          Proin volutpat mollis egestas. Nam luctus facilisis
+          ultrices. Pellentesque volutpat ligula est. Mattis
+          fermentum, at nec lacus.
+          </h3>
+          </div>
 
         {/* Navigation Buttons */}
         <button className="prev" ref={prevBtnRef}>Prev</button>

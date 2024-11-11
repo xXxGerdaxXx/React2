@@ -1,8 +1,8 @@
 import React from 'react';
-import diagramImage from '../assets/images/diagram.svg'; // Adjust the path as needed
-import paymentCardImage from '../assets/images/payment-card.svg'; // Adjust the path as needed
-import vector1Image from '../assets/images/vector1.svg'; // Adjust the path as needed
-import vector5Image from '../assets/images/vector5.svg'; // Adjust the path as needed
+import diagramImage from '../assets/images/diagram.svg'; 
+import paymentCardImage from '../assets/images/payment-card.svg'; 
+import vector1Image from '../assets/images/vector1.svg'; 
+import vector5Image from '../assets/images/vector5.svg'; 
 
 const Hero3Section = () => {
   return (

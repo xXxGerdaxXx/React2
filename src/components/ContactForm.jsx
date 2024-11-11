@@ -9,8 +9,9 @@ function ContactForm() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({}); 
 
-  // Handle input change and update state
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -28,22 +29,45 @@ function ContactForm() {
     });
   };
 
-  // Handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Log the data before sending
+
+
+    const newErrors = {}; 
+
+    // kod från Hans videolektion
+    const namePattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    if (!namePattern.test(formData.fullname.trim())) {
+      newErrors.fullname = "Please enter at least two words in the name field.";
+    }
+
+   
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address with at least two letters.";
+    }
+
+   
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    } else {
+      setErrors({});
+    }
+
+    // kod från chat
     console.log('Form Data:', JSON.stringify(formData));
-  
+
     const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-  
+
     if (!res.ok) {
-      const errorText = await res.text();  // Capture the error message from the server
-      console.error('Error:', errorText);  // Log the error details
+      const errorText = await res.text(); 
+      console.error('Error:', errorText); 
     } else {
       console.log('Form successfully submitted');
       setSubmitted(true);
@@ -54,7 +78,6 @@ function ContactForm() {
       });
     }
   };
-  
 
   if (submitted) {
     return (
@@ -80,6 +103,7 @@ function ContactForm() {
           placeholder="Your full name"
           required
         />
+        {errors.fullname && <p className="error-text">{errors.fullname}</p>}
 
         <label htmlFor="email-index2">Email address</label>
         <input
@@ -91,6 +115,7 @@ function ContactForm() {
           placeholder="Your email address"
           required
         />
+        {errors.email && <p className="error-text">{errors.email}</p>}
 
         <label htmlFor="specialist-index2">Specialist</label>
         <select

@@ -1,9 +1,8 @@
-// Subscribe.jsx
 import React, { useState } from 'react';
 import notificationIcon from '../assets/images/notification.svg';
 import mailIcon from '../assets/images/mail.svg';
 import Modal from './AlertBox';
-import SubscribeRight from './SubscribeRight'; // Import the new component
+import SubscribeRight from './SubscribeRight'; 
 
 function Subscribe() {
   const [email, setEmail] = useState('');
@@ -17,7 +16,7 @@ function Subscribe() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!email) {
       setError('Email is required');
       setSuccess('');
@@ -75,11 +74,11 @@ function Subscribe() {
           </div>
           <h2 className="subscribe-title">Subscribe to our newsletter</h2>
           <h3 className="subscribe-description">
-            Subscribe to our newsletter to stay informed about the latest updates
+            Subscribe to our newsletter to stay informed about latest updates
           </h3>
         </div>
 
-        {/* Use the SubscribeRight component */}
+        
         <SubscribeRight
           email={email}
           handleChange={handleChange}

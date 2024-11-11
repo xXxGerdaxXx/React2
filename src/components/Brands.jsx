@@ -1,10 +1,10 @@
 import React from 'react';
-import logo1 from '../assets/images/logo-1.svg'; // Adjust the path
-import logo2 from '../assets/images/logo-2.svg'; // Adjust the path
-import logo3 from '../assets/images/logo-3.svg'; // Adjust the path
-import logo4 from '../assets/images/logo-4.svg'; // Adjust the path
-import logo5 from '../assets/images/logo-5.svg'; // Adjust the path
-import logo6 from '../assets/images/logo-6.svg'; // Adjust the path
+import logo1 from '../assets/images/logo-1.svg'; 
+import logo2 from '../assets/images/logo-2.svg'; 
+import logo3 from '../assets/images/logo-3.svg'; 
+import logo4 from '../assets/images/logo-4.svg'; 
+import logo5 from '../assets/images/logo-5.svg'; 
+import logo6 from '../assets/images/logo-6.svg'; 
 
 const BrandsSection = () => {
   return (
