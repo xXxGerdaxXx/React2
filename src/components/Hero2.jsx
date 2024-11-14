@@ -8,8 +8,8 @@ const HowItWorksSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Manage the current image index
 
   const imageRefs = useRef([]); // Ref array to store image DOM nodes
-  const prevBtnRef = useRef(null); // Ref for the previous button
-  const nextBtnRef = useRef(null); // Ref for the next button
+  const prevBtnRef = useRef(null); 
+  const nextBtnRef = useRef(null); 
 
   const updateCarousel = () => {
     if (window.innerWidth < 768) {
@@ -78,7 +78,7 @@ const HowItWorksSection = () => {
             <div
               className="hero2-image"
               key={index}
-              ref={(el) => (imageRefs.current[index] = el)} // Store image refs
+              ref={(el) => (imageRefs.current[index] = el)} 
             >
               <img src={image} alt={`App showcasing transaction history - ${index + 1}`} />
             </div>
