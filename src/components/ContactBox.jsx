@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon for icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
 const ContactBox = ({ icon, text, link, image }) => {
   return (
