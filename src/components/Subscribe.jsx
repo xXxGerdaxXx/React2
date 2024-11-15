@@ -14,50 +14,69 @@ function Subscribe() {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!email) {
-      setError('Email is required');
-      setSuccess('');
-      setIsModalOpen(true);
-    } else if (!emailPattern.test(email)) {
-      setError('Please enter a valid email');
-      setSuccess('');
-      setIsModalOpen(true);
-    } else {
-      setError('');
-      try {
-        const response = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify({ email }),
-        });
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-        const contentType = response.headers.get('content-type');
-        let result = null;
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        if (contentType && contentType.includes('application/json')) {
-          result = await response.json();
-        }
+  // Check if the email is empty
+  if (!email) {
+    setError('Email is required');
+    setSuccess('');
+    setIsModalOpen(true);
+    return;
+  }
 
-        if (!response.ok) {
-          throw new Error(result?.message || 'Failed to subscribe');
-        }
+  // Check if the email contains "@" and a valid domain format
+  if (!email.includes('@') || !email.includes('.')) {
+    setError('Email must contain "@" and a valid domain');
+    setSuccess('');
+    setIsModalOpen(true);
+    return;
+  }
 
-        setSuccess('Subscription successful!');
-        setEmail('');
-        setIsModalOpen(true);
-      } catch (err) {
-        console.error('Error:', err);
-        setError('Failed to subscribe. Please try again later.');
-        setIsModalOpen(true);
-      }
+  // Check if the email matches the regex pattern
+  if (!emailPattern.test(email)) {
+    setError('Please enter a valid email address');
+    setSuccess('');
+    setIsModalOpen(true);
+    return;
+  }
+
+  // If all validations pass
+  setError('');
+
+  try {
+    const response = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    const contentType = response.headers.get('content-type');
+    let result = null;
+
+    if (contentType && contentType.includes('application/json')) {
+      result = await response.json();
     }
-  };
+
+    if (!response.ok) {
+      throw new Error(result?.message || 'Failed to subscribe');
+    }
+
+    setSuccess('Subscription successful!');
+    setEmail('');
+    setIsModalOpen(true);
+  } catch (err) {
+    console.error('Error:', err);
+    setError('Failed to subscribe. Please try again later.');
+    setIsModalOpen(true);
+  }
+};
+
 
   const closeModal = () => {
     setIsModalOpen(false);
