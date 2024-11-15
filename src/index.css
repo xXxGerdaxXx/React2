@@ -210,7 +210,7 @@
     .dark-mode .questions-item h3 {
     color: var(--color-white);
     }
-    .dark-mode .subscribe-right input[type="email"] {
+    .dark-mode .subscribe-right input[type="text"] {
     background-color: var(--color-white) !important;
     }
     .dark-mode .subscribe-content h2 {
@@ -937,7 +937,7 @@
     opacity: 0.6;
     }
 
-    .subscribe-right input[type="email"] {
+    .subscribe-right input[type="text"] {
     width: 220px;             
     height: 52px;             
     padding: 16px 16px 16px 40px; 
@@ -1897,7 +1897,7 @@
         padding-right: 0;
     }
 
-    .subscribe-right input[type="email"] {
+    .subscribe-right input[type="text"] {
         width: 201.53px; 
         height: 50.7px; 
         padding: 0 1rem 0 40px; 
@@ -2443,7 +2443,7 @@
     .subscribe-right {
         width: 100%;
     }
-    .subscribe-right input[type="email"] {
+    .subscribe-right input[type="text"] {
         width: 330px; 
         height: 50.7px; 
         padding: 0 1rem 0 40px; 

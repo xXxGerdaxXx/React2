@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
 
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  // Check if the email is empty
+
   if (!email) {
     setError('Email is required');
     setSuccess('');
@@ -27,7 +27,7 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  // Check if the email contains "@" and a valid domain format
+
   if (!email.includes('@') || !email.includes('.')) {
     setError('Email must contain "@" and a valid domain');
     setSuccess('');
@@ -35,7 +35,7 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  // Check if the email matches the regex pattern
+  
   if (!emailPattern.test(email)) {
     setError('Please enter a valid email address');
     setSuccess('');
@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  // If all validations pass
+
   setError('');
 
   try {
